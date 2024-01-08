@@ -4,6 +4,22 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Version>0.1.0</Version>
+        <PackageProjectUrl>https://github.com/DWVoid/Gravitas.BugCheck</PackageProjectUrl>
+        <PackageLicenseUrl>https://unlicense.org/</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/DWVoid/Gravitas.BugCheck</RepositoryUrl>
     </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Mono.Unix" Version="7.1.0-final.1.21458.1" />
+    </ItemGroup>
 
 </Project>

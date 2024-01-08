@@ -68,13 +68,13 @@ file static class SuspendPosix
     }
 }
 
-public static class Exceptional
+public static class BugCheck
 {
-    private static BugCheckOption _option;
+    private static BugCheckOption _option = new(true);
 
-    public static void Install(BugCheckOption option = new()) => _option = option;
+    public static void Configure(BugCheckOption option) => _option = option;
 
-    public static void BugCheck()
+    public static void Do()
     {
         if (_option.TryBreak && Debugger.Launch()) Debugger.Break();
         switch (_option.Action)
