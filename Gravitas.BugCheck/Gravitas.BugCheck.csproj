@@ -6,20 +6,25 @@
         <Nullable>enable</Nullable>
         <Version>0.1.0</Version>
         <PackageProjectUrl>https://github.com/DWVoid/Gravitas.BugCheck</PackageProjectUrl>
-        <PackageLicenseUrl>https://unlicense.org/</PackageLicenseUrl>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/DWVoid/Gravitas.BugCheck</RepositoryUrl>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Mono.Unix" Version="7.1.0-final.1.21458.1" />
+        <PackageReference Include="Mono.Unix" Version="7.1.0-final.1.21458.1"/>
+        <None Include="$(SolutionDir)/LICENSE" Pack="true" PackagePath="\"/>
+        <None Include="$(SolutionDir)/README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
 </Project>
